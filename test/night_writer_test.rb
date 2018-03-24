@@ -7,10 +7,10 @@ class NightWriterTest < Minitest::Test
 
   def test_it_exists
     nightwriter = NightWriter.new
-    assert_instance_of NightWriter, nightwriter
+    actual = NightWriter
+    expected = nightwriter
+    assert_instance_of actual, expected
   end
-
-
 =begin
 1. The Runner
 Write a Ruby program that can output a string like:
@@ -18,6 +18,17 @@ Write a Ruby program that can output a string like:
 $ ruby ./lib/night_write.rb message.txt braille.txt
 Created 'braille.txt' containing 256 characters
 =end
+
+# Big picture = It needs to include a put statement that returns a message that references both the braille txt file and how many characters it contains.
+
+# Smaller picture = Create variable or method that contains or calls the braille.txt file
+
+# Smaller picture = Create method that counts number of characters in braille.txt
+
+  def test_it_contains_a_file_reader
+  end
+
+
 
 
 =begin
