@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/night_writer'
+require './lib/file_reader'
 require 'pry'
 
 class NightWriterTest < Minitest::Test
@@ -15,11 +16,18 @@ class NightWriterTest < Minitest::Test
 1. The Runner
 Write a Ruby program that can output a string like:
 
+Example:
 $ ruby ./lib/night_write.rb message.txt braille.txt
 Created 'braille.txt' containing 256 characters
 =end
 
-# Big picture = It needs to include a put statement that returns a message that references both the braille txt file and how many characters it contains.
+# Big picture = night_writer.rb needs to take two arguments from the terminal - the english message (here: message.txt) and the filename we give the encoded message (here: braille.txt).
+
+# Big picture = night_writer.rb needs to convert/encode the english message in 1st argument (here: message.txt) to braille.
+
+#Big picture = night_writer.rb needs to output converted message to the 2nd argument, the encoded message file (here: braille.txt)
+
+# Smaller picture = It needs to return a put statement that references both the encoded message file (here: braille.txt) file and how many characters it contains.
 
 # Smaller picture = Create variable or method that contains or calls the braille.txt file
 

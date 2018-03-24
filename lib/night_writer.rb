@@ -1,3 +1,5 @@
+require "./lib/file_reader"
+
 class NightWriter
 #add any necessary attr
 
