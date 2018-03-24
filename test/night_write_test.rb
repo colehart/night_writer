@@ -1,15 +1,15 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/night_writer'
+require './lib/night_write'
 require './lib/file_reader'
 require 'pry'
 
-class NightWriterTest < Minitest::Test
+class NightWriteTest < Minitest::Test
 
   def test_it_exists
-    nightwriter = NightWriter.new
-    actual = NightWriter
-    expected = nightwriter
+    night_write = NightWrite.new
+    actual = NightWrite
+    expected = night_write
     assert_instance_of actual, expected
   end
 =begin

@@ -1,6 +1,6 @@
 require "./lib/file_reader"
 
-class NightWriter
+class NightWrite
 #add any necessary attr
 
   def initialize
