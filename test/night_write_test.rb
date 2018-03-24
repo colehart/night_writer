@@ -4,6 +4,7 @@ require './lib/night_write'
 require './lib/file_reader'
 require 'pry'
 
+
 class NightWriteTest < Minitest::Test
 
   def test_it_exists
@@ -12,6 +13,10 @@ class NightWriteTest < Minitest::Test
     expected = night_write
     assert_instance_of actual, expected
   end
+
+  def test_braille_is_a_grid_of_cells
+
+  end
 =begin
 1. The Runner
 Write a Ruby program that can output a string like:
@@ -19,7 +24,14 @@ Write a Ruby program that can output a string like:
 Example:
 $ ruby ./lib/night_write.rb message.txt braille.txt
 Created 'braille.txt' containing 256 characters
+
+A simplified version of the example is :
+braille.txt = ./lib/night_write.rb(message.txt)
+This is parallel to the idea of :
+variable = method(argument)
 =end
+
+
 
 # Big picture = night_writer.rb needs to take two arguments from the terminal - the english message (here: message.txt) and the filename we give the encoded message (here: braille.txt).
 
