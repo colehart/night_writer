@@ -1,4 +1,4 @@
-class Blah
+class NightWriter
 #add any necessary attr
 
   def initialize
