@@ -1,9 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/night_write'
-require './lib/file_reader'
 require 'pry'
-
 
 class NightWriteTest < Minitest::Test
 
@@ -14,9 +12,6 @@ class NightWriteTest < Minitest::Test
     assert_instance_of actual, expected
   end
 
-  def test_braille_is_a_grid_of_cells
-
-  end
 =begin
 1. The Runner
 Write a Ruby program that can output a string like:
@@ -31,8 +26,6 @@ This is parallel to the idea of :
 variable = method(argument)
 =end
 
-
-
 # Big picture = night_writer.rb needs to take two arguments from the terminal - the english message (here: message.txt) and the filename we give the encoded message (here: braille.txt).
 
 # Big picture = night_writer.rb needs to convert/encode the english message in 1st argument (here: message.txt) to braille.
@@ -45,11 +38,12 @@ variable = method(argument)
 
 # Smaller picture = Create method that counts number of characters in braille.txt
 
-  def test_it_contains_a_file_reader
+  def test_it_calls_the_file_reader
   end
 
 
-
+  def test_braille_is_a_grid_of_cells
+  end
 
 =begin
 Then work to:
