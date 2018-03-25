@@ -13,6 +13,10 @@ class FileReaderTest < Minitest::Test
   Created 'braille.txt' containing 256 characters
 =end
 
+  # Big picture = It needs to include a put statement that returns a message that references both the braille txt file and how many characters it contains.
+
+  # Smaller picture = Create variable or method that contains or calls the braille.txt file
+
   def test_it_exists
     file_reader = FileReader.new
     actual = FileReader
@@ -21,8 +25,8 @@ class FileReaderTest < Minitest::Test
   end
 
   def test_it_reads_the_correct_file
+    #passing the two arguments message.txt and braille.txt in Terminal after test/file_reader_test.rb
     file_reader = FileReader.new
-    ARGV[0]
     actual = "Hello world"
     expected = file_reader.read
     assert_equal actual, expected
