@@ -11,13 +11,18 @@ class DictionaryTest < MiniTest::Test
   end
 
   def test_it_translate_english_to_braille
+  skip
     dictionary = Dictionary.new
-    actual "e"
-    expected "000..."
-    assert_equal
+    actual = translation.eng_to_braille_alpha{"e"}
+    expected = "000..."
+    assert_equal expected, actual
   end
 
   def test_it_translate_braille_to_english
+    dictionary = Dictionary.new
+    actual = version.braille_to_eng_alpha{"0.0..."}
+    expected = "b"
+    assert equal expected, actual
   end
 
 

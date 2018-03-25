@@ -1,10 +1,10 @@
 class Dictionary
 
-attr_reader :translation
+attr_reader :translation, :version
 
-  def initialize
+    def translation(eng_to_braille_alpha)
 
-@eng_to_braille_alpha =  {"a" => "0.....",
+eng_to_braille_alpha =  {"a" => "0.....",
                       "b" => "0.0...",
                       "c" => "00....",
                       "d" => "00.0..",
@@ -30,8 +30,11 @@ attr_reader :translation
                       "y" => "00.000",
                       "z" => "0..000",
                      }
+end
 
-@braille_to_eng_alpha =  {"0....." => "a",
+       def version
+
+braille_to_eng_alpha =  {"0....." => "a",
                       "0.0..." => "b",
                       "00...." => "c",
                       "00.0.." => "d",
@@ -60,9 +63,6 @@ attr_reader :translation
                      }
   end
 
-
-  def translation_to_braille
-  end
 
 end
 
