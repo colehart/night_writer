@@ -1,11 +1,12 @@
 require './lib/file_reader'
 
 class FileWriter
+
   attr_reader :encoded_filename,
               :byte_count
 
   def initialize
-    @reader = FileReader.new
+    @reader= FileReader.new
     @encoded_filename = ARGV[1]
     @byte_count = 0
   end
