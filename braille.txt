@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 Hello world
 Hello world
 Hello world
+=======
+#<Tripler:0x007fd856a6bae0>
+>>>>>>> 93ca77f837e551fcfbd41119d384cef92c9afeea

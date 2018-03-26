@@ -5,7 +5,7 @@ class FileWriter
               :byte_count
 
   def initialize
-    @reader = FileReader.new
+    @reader= FileReader.new
     @encoded_filename = ARGV[1]
     @byte_count = 0
   end
