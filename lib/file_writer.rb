@@ -1,22 +1,18 @@
-require './lib/file_reader'
+require './lib/tripler'
 
 class FileWriter
-  attr_reader :reader,
+  attr_reader :tripler,
               :encoded_filename,
               :byte_count
 
   def initialize
-    @reader = FileReader.new
+    @tripler= Tripler.new
     @encoded_filename = ARGV[1]
     @byte_count = 0
   end
 
-  def echo_plaintext_three_times
-    @reader = ((reader.read_plaintext_message + "\n") * 3).chomp
-  end
-
   def write_encoded_message
-    @byte_count = File.write(@encoded_filename, reader.read_plaintext_message)
+    @byte_count = File.write(@encoded_filename, @tripler)
   end
 
 end

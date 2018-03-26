@@ -1,1 +1,1 @@
-Hello world
+#<Tripler:0x007fd856a6bae0>

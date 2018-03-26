@@ -11,6 +11,7 @@ class NightWrite
     @writer.write_encoded_message
     return "Created '#{@writer.encoded_filename}' containing #{@writer.byte_count} characters."
   end
+
 end
 
 night_write = NightWrite.new
