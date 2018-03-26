@@ -1,5 +1,4 @@
 require "./lib/file_reader"
-require "./lib/message"
 
 class NightWrite
 #add any necessary attr
@@ -10,7 +9,9 @@ attr_reader :reader
   @reader = FileReader.new
   end
 
-File.open("message.txt").each do |line|
-puts line
-end
+  def write
+    filename = ARGV[1]
+    count = File.write(filename, reader.read)
+    return "Created '#{filename}' containing #{count} characters."
+  end
 end

@@ -24,43 +24,30 @@ A simplified version of the example is :
 braille.txt = ./lib/night_write.rb(message.txt)
 This is parallel to the idea of :
 variable = method(argument)
+
+Big picture = night_writer.rb needs to take two arguments from the terminal - the english message (here: message.txt) and the filename we give the encoded message (here: braille.txt).
+
+Smaller picture = It needs to return a statement that references both the encoded message file (here: braille.txt) file and how many characters it contains.
+
+Smaller picture = Create variable or method that contains or calls the braille.txt file
+
+Smaller picture = Create method that counts number of characters in braille.txt
 =end
 
-# Big picture = night_writer.rb needs to take two arguments from the terminal - the english message (here: message.txt) and the filename we give the encoded message (here: braille.txt).
-
-# Big picture = night_writer.rb needs to convert/encode the english message in 1st argument (here: message.txt) to braille.
-
-#Big picture = night_writer.rb needs to output converted message to the 2nd argument, the encoded message file (here: braille.txt)
-
-# Smaller picture = It needs to return a put statement that references both the encoded message file (here: braille.txt) file and how many characters it contains.
-
-# Smaller picture = Create variable or method that contains or calls the braille.txt file
-
-# Smaller picture = Create method that counts number of characters in braille.txt
-
-  def test_it_calls_the_file_reader
+  def test_it_creates_new_file
+    night_write = NightWrite.new
+    actual = "Created 'braille.txt' containing 11 characters."
+    expected = night_write.write
+    assert_equal actual, expected
   end
 
+# Big picture = night_writer.rb needs to convert/encode the english message in 1st argument (here: message.txt) to braille.
 
   def test_braille_is_a_grid_of_cells
   end
 
-=begin
-Then work to:
+# Big picture = night_writer.rb needs to output converted message to the 2nd argument, the encoded message file (here: braille.txt)
 
-Pull the specified output filename from the command line arguments and print it in the terminal
-Get the actual number of characters from the message.txt and output it in the terminal
-=end
-
-#   def test_it_exists
-# skip
-#     assert_instance_of Blah, @blah
-#   end
-
-#   def test_braille_is_a_grid_of_cells
-# skip
-#     assert_instance of Array (or Hash)
-#   end
     #every character returns 6 dots 2 columns 3 lines 2x3
 
     # BUT capital letter = 4x3 because 2x3 + 2x3
