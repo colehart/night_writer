@@ -1,17 +1,15 @@
-require "./lib/file_reader"
+require './lib/file_writer'
+require 'pry'
 
 class NightWrite
-#add any necessary attr
-attr_reader :reader
+  #add any necessary attr
+  attr_reader :writer
 
   def initialize
   #attributes/instance_variables here
-  @reader = FileReader.new
+  @writer = FileWriter.new
   end
 
-  def write
-    filename = ARGV[1]
-    count = File.write(filename, reader.read)
-    return "Created '#{filename}' containing #{count} characters."
-  end
+  @writer.write_encoded_message
+
 end

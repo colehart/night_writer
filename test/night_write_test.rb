@@ -37,7 +37,7 @@ Smaller picture = Create method that counts number of characters in braille.txt
   def test_it_creates_new_file
     night_write = NightWrite.new
     actual = "Created 'braille.txt' containing 11 characters."
-    expected = night_write.write
+    expected = night_write
     assert_equal actual, expected
   end
 
