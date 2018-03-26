@@ -1,6 +1,5 @@
 require './lib/file_writer'
 require 'pry'
-
 class NightWrite
   #add any necessary attr
   attr_reader :writer
