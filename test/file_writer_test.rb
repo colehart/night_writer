@@ -63,7 +63,12 @@ hello world
  AND make sure to have a line break
 =end
 
-  # def test_
-  # end
+  def test_it_triples_plaintext_message_content
+    file_writer = FileWriter.new
+    actual = "Hello world\n" + "Hello world\n" + "Hello world"
+    expected = file_writer.echo_plaintext_three_times
+    assert_equal actual, expected
+  end
+
 
 end

@@ -11,7 +11,12 @@ class FileWriter
     @byte_count = 0
   end
 
+  def echo_plaintext_three_times
+    @reader = ((reader.read_plaintext_message + "\n") * 3).chomp
+  end
+
   def write_encoded_message
     @byte_count = File.write(@encoded_filename, reader.read_plaintext_message)
   end
+
 end
