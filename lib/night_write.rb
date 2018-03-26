@@ -1,14 +1,18 @@
 require './lib/file_writer'
-require 'pry'
+
 class NightWrite
-  #add any necessary attr
   attr_reader :writer
 
   def initialize
-  #attributes/instance_variables here
-  @writer = FileWriter.new
+    @writer = FileWriter.new
   end
 
-  @writer.write_encoded_message
-
+  def display_confirmation_message
+    @writer.write_encoded_message
+    return "Created '#{@writer.encoded_filename}' containing #{@writer.byte_count} characters."
+  end
 end
+
+night_write = NightWrite.new
+
+puts night_write.display_confirmation_message

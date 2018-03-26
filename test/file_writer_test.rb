@@ -20,10 +20,18 @@ class FileWriterTest < Minitest::Test
     assert_instance_of actual, expected
   end
 
-  def test_it_writes_into_the_correct_file_and_captures_the_bytes_in_byte_count
+  def test_it_writes_into_the_correct_file
+    # second argument passed in terminal is braille.txt
+    file_writer = FileWriter.new
+    actual = "braille.txt"
+    expected = file_writer.encoded_filename
+    assert_equal actual, expected
+  end
+
+  def test_it_captures_the_bytes_in_byte_count
     #message.txt contains "Hello world" as message
     file_writer = FileWriter.new
-    actual = "Created 'braille.txt' containing 11 characters."
+    actual = 11
     expected = file_writer.write_encoded_message
     assert_equal actual, expected
   end

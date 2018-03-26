@@ -34,10 +34,10 @@ Smaller picture = Create variable or method that contains or calls the braille.t
 Smaller picture = Create method that counts number of characters in braille.txt
 =end
 
-  def test_it_creates_new_file
+  def test_it_displays_correct_confirmation_msg
     night_write = NightWrite.new
     actual = "Created 'braille.txt' containing 11 characters."
-    expected = night_write
+    expected = night_write.display_confirmation_message
     assert_equal actual, expected
   end
 
