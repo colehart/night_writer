@@ -1,8 +1,7 @@
 require './lib/file_reader'
 
 class FileWriter
-  attr_reader :reader,
-              :encoded_filename,
+  attr_reader :encoded_filename,
               :byte_count
 
   def initialize
@@ -12,11 +11,11 @@ class FileWriter
   end
 
   def echo_plaintext_three_times
-    @reader = ((reader.read_plaintext_message + "\n") * 3).chomp
+    ((@reader.read_plaintext_message + "\n") * 3).chomp
   end
 
   def write_encoded_message
-    @byte_count = File.write(@encoded_filename, reader.read_plaintext_message)
+    @byte_count = File.write(@encoded_filename, echo_plaintext_three_times)
   end
 
 end
