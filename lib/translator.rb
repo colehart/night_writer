@@ -1,6 +1,7 @@
 class Translator
   attr_reader :eng_keys,
-              :braille_keys
+              :braille_keys,
+              :braille_message
 
   def initialize
     @eng_keys = {
@@ -60,12 +61,18 @@ class Translator
                         ["00", ".0", "00"] => "y",
                         ["0.", ".0", "00"] => "z"
                       }
+    @braille_message = []
   end
 
   def eng_to_braille(plaintext_message)
     plaintext_message = ARGV[0]
-    plaintext_message.chars
+    letters = plaintext_message.chars
 
+    unless letters == nil
+      @braille_message << @eng_keys[letters.shift(letter.count)]
+    end
+
+    @braille_message
   end
 
 end
