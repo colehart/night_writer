@@ -62,7 +62,8 @@ class Translator
                       }
   end
 
-  def eng_to_braille
+  def eng_to_braille(plaintext_message)
+    plaintext_message = ARGV[0]
 
   end
 
