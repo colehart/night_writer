@@ -69,7 +69,7 @@ class Translator
     letters = plaintext_message.chars
 
     unless letters == nil
-      @braille_message << @eng_keys[letters.shift(letter.count)]
+      @braille_message << @eng_keys[letters.shift]
     end
 
     @braille_message
