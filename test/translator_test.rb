@@ -37,8 +37,9 @@ We are grabbing plaintext_message from file, not from ARGV
   def test_it_can_translate_from_filereader
     #passing message.txt in command line
     translator = Translator.new
-    actual = [["0.", "00", ".."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."]]
+    actual = [["0.", "00", ".."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."], " ", [".0", "00", ".0"], ["0.", ".0", "0."], ["0.", "00", "0."], ["0.", "0.", "0."], ["00", ".0", ".."]]
     expected = translator.eng_to_braille
+    assert_equal actual, expected
   end
 
 end

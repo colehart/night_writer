@@ -34,7 +34,7 @@ class Translator
                         "x" => ["00", "..", "00"],
                         "y" => ["00", ".0", "00"],
                         "z" => ["0.", ".0", "00"],
-                         "" => ""                    
+                         " " => " "
                         }
 
     @braille_keys = {
@@ -64,7 +64,7 @@ class Translator
                         ["00", "..", "00"] => "x",
                         ["00", ".0", "00"] => "y",
                         ["0.", ".0", "00"] => "z",
-                        "" => ""
+                        " " => " "
                       }
     @braille_message = []
   end
@@ -75,6 +75,7 @@ class Translator
     (letters.count).times do |letter|
       @braille_message << @eng_keys[letters.shift]
     end
+
 
     @braille_message
 
