@@ -1,4 +1,4 @@
-class Dictionary
+class Translator
   attr_reader :eng_to_braille,
               :braille_to_eng
 
