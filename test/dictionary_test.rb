@@ -12,19 +12,17 @@ class DictionaryTest < MiniTest::Test
 
   def test_it_translate_english_to_braille
     dictionary = Dictionary.new
-    actual = eng_to_braille("e")
-    expected = ["0.",
-                ".0",
-                ".."]
-    assert_equal expected, actual
+    actual = ["0.", "..", ".."]
+    expected = dictionary.eng_to_braille["a"]
+    assert_equal actual, expected
+
   end
 
   def test_it_translate_braille_to_english
-    skip
     dictionary = Dictionary.new
-    actual = version.braille_to_eng_alpha("0.0...")
-    expected = "b"
-    assert equal expected, actual
+    actual = "a"
+    expected = dictionary.braille_to_eng[["0.", "..", ".."]]
+    assert_equal actual, expected
   end
 
 
