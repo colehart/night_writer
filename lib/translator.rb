@@ -64,6 +64,7 @@ class Translator
 
   def eng_to_braille(plaintext_message)
     plaintext_message = ARGV[0]
+    plaintext_message.chars
 
   end
 
