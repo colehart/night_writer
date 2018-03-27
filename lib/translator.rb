@@ -1,9 +1,12 @@
+require './lib/file_reader'
+
 class Translator
   attr_reader :eng_keys,
               :braille_keys,
               :braille_message
 
   def initialize
+    @reader= FileReader.new
     @eng_keys = {
                         "a" => ["0.", "..", ".."],
                         "b" => ["0.", "0.", ".."],
@@ -64,9 +67,8 @@ class Translator
     @braille_message = []
   end
 
-  def eng_to_braille(plaintext_message)
-    plaintext_message = ARGV[0]
-    letters = plaintext_message.chars
+  def eng_to_braille
+    letters = @reader.read_plaintext_message.chars
 
     (letters.count).times do |letter|
       @braille_message << @eng_keys[letters.shift]
