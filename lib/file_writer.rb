@@ -1,16 +1,17 @@
-require './lib/file_reader'
+require './lib/translator'
 
 class FileWriter
   attr_reader :encoded_filename,
               :byte_count
 
   def initialize
-    @reader= FileReader.new
+    @translator = Translator.new
     @encoded_filename = ARGV[1]
     @byte_count = 0
   end
 
   def echo_plaintext_three_times
+    #we need to change this to pull from translator
     ((@reader.read_plaintext_message + "\n") * 3).chomp
   end
 
