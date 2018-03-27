@@ -1,9 +1,9 @@
 class Translator
-  attr_reader :eng_to_braille,
-              :braille_to_eng
+  attr_reader :eng_keys,
+              :braille_keys
 
   def initialize
-    @eng_to_braille = {
+    @eng_keys = {
                         "a" => ["0.", "..", ".."],
                         "b" => ["0.", "0.", ".."],
                         "c" => ["00", "..", ".."],
@@ -31,7 +31,8 @@ class Translator
                         "y" => ["00", ".0", "00"],
                         "z" => ["0.", ".0", "00"]
                         }
-    @braille_to_eng = {
+
+    @braille_keys = {
                         ["0.", "..", ".."] => "a",
                         ["0.", "0.", ".."] => "b",
                         ["00", "..", ".."] => "c",
@@ -60,4 +61,9 @@ class Translator
                         ["0.", ".0", "00"] => "z"
                       }
   end
+
+  def eng_to_braille
+
+  end
+
 end

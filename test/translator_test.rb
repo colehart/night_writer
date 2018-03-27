@@ -13,14 +13,22 @@ class TranslatorTest < MiniTest::Test
   def test_it_translate_english_to_braille
     translator = Translator.new
     actual = ["0.", "..", ".."]
-    expected = translator.eng_to_braille["a"]
+    expected = translator.eng_keys["a"]
     assert_equal actual, expected
   end
 
   def test_it_translate_braille_to_english
     translator = Translator.new
     actual = "a"
-    expected = translator.braille_to_eng[["0.", "..", ".."]]
+    expected = translator.braille_keys[["0.", "..", ".."]]
+    assert_equal actual, expected
+  end
+
+  def test_it_can_translate_an_english_word_to_braille
+    skip
+    translator = Translator.new
+    actual = ["0.", "00", ".."] ["0.", ".0", ".."] ["0.", "0.", "0."] ["0.", "0.", "0."] ["0.", ".0", "0."]
+    expected = translator.eng_to_braille("hello")
     assert_equal actual, expected
   end
 
