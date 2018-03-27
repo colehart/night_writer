@@ -68,11 +68,12 @@ class Translator
     plaintext_message = ARGV[0]
     letters = plaintext_message.chars
 
-    unless letters == nil
+    (letters.count).times do |letter|
       @braille_message << @eng_keys[letters.shift]
     end
 
     @braille_message
+
   end
 
 end
