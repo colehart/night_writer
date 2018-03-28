@@ -38,8 +38,8 @@ We are grabbing plaintext_message from file, not from ARGV
      #skipped when changing message.txt, from Hello world, content for other class tests
     #passing message.txt in command line
     translator = Translator.new
-    actual = [["..0.", "..00", ".0.."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."], ["  ", "  ", "  "], [".0", "00", ".0"], ["0.", ".0", "0."], ["0.", "00", "0."], ["0.", "0.", "0."], ["00", ".0", ".."]]
-    expected = translator.eng_to_braille
+    actual = "he"
+    expected = translator.braille_to_english
     assert_equal actual, expected
   end
 

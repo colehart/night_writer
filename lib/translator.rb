@@ -5,19 +5,19 @@ require './lib/braille_keys.rb'
 class Translator
   include EnglishKeys
   include BrailleKeys
-  attr_reader :braille_message
+  attr_reader :english_message
 
   def initialize
     @reader= FileReader.new
-    @braille_message = []
+    @english_message = []
   end
 
-  def eng_to_braille
-    letters = @reader.read_plaintext_message.chars
+  def braille_to_english
+    letters = @reader.read_braille_message.chars//other function
     (letters.count).times do |letter|
-      @braille_message << eng_keys[letters.shift]
+      @english_message << eng_keys[letters.shift]
     end
-    @braille_message
+    @english_message
   end
 
 end
