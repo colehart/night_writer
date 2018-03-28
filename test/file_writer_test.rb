@@ -4,7 +4,8 @@ require './lib/file_writer'
 require 'pry'
 
 class FileWriterTest < Minitest::Test
-
+  include EnglishKeys
+  include BrailleKeys
 =begin
   1. The Runner
   Write a Ruby program that can output a string like:
@@ -52,7 +53,15 @@ Smaller picture : we need to break each braille string to represent each letter 
 Try with one letter first.
 =end
 
-  def test_it_can_split_a_braille_letter_into_2x3_grid
+  def test_it_can_split_a_lowercase_braille_letter_into_2x3_grid
+# change message txt to have only lowercase a
+    file_writer = FileWriter.new
+    actual = "0.\n..\n.."
+    expected = file_writer.make_braille_grid_by_single_letter
+    assert_equal actual, expected
+  end
+
+  def test_it_can_split_a_lowercase_braille_word_into_2x3_grid
 # change message txt to have only lowercase a
     file_writer = FileWriter.new
     actual = "0.\n..\n.."
