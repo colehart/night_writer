@@ -2,7 +2,11 @@ require './lib/translator'
 
 class FileWriter
   attr_reader :encoded_filename,
-              :byte_count
+              :byte_count,
+              :line_1,
+              :line_2,
+              :line_3,
+              :counter
 
   def initialize
     @translator = Translator.new
@@ -12,6 +16,7 @@ class FileWriter
     @line_1 = []
     @line_2 = []
     @line_3 = []
+    @counter = 0
   end
 
 =begin
@@ -26,18 +31,20 @@ class FileWriter
 =end
 
   def make_braille_grid_letter_by_letter
-    counter = @raw_braille_message.count
-    if @raw_braille_message
-      counter.times do |letter|
-      @line_1 << @raw_braille_message.shift
-      @line_2 << @raw_braille_message.shift
-      @line_3 << @raw_braille_message.shift
+    @counter = @raw_braille_message.count
+    if @raw_braille_message != nil
+      @counter.times do
+        letter = @raw_braille_message.shift
+        @line_1 << letter.shift
+        @line_2 << letter.shift
+        @line_3 << letter.shift
+      end
     end
-    (@raw_braille_message.count).times do
-      binding.pry
-      letter = (@raw_braille_message.shift)
-      letter.join("\n").chomp
-    end
+    
+    # (@raw_braille_message.count).times do
+    #   letter = (@raw_braille_message.shift)
+    #   letter.join("\n").chomp
+    # end
   end
 
   def write_encoded_message
