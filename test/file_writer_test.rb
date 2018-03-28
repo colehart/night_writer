@@ -44,5 +44,20 @@ class FileWriterTest < Minitest::Test
     refute_equal actual, expected
   end
 
+=begin
+Big picture : we need to output our braille character in the file
+Consider building a component that would take in a plain-text letter and a position (maybe numbered 0-5) and would return either a 0 or ..
+
+Smaller picture : we need to break each braille string to represent each letter "as it should be" 2x3 or 4x3 vertical grid.
+Try with one letter first.
+=end
+
+  def test_it_can_split_a_braille_letter_into_2x3_grid
+# change message txt to have only lowercase a
+    file_writer = FileWriter.new
+    actual = "0.\n..\n.."
+    expected = file_writer.make_braille_grid
+    assert_equal actual, expected
+  end
 
 end
