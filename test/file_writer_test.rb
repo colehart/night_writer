@@ -64,6 +64,13 @@ class FileWriterTest < Minitest::Test
     expected = file_writer.counter
     assert_equal actual, expected
   end
+
+  def test_encoded_braille_message_starts_empty
+    file_writer = FileWriter.new
+    actual = ""
+    expected = file_writer.encoded_braille_message
+    assert_equal actual, expected
+  end
 =begin
 Big picture : we need to output our braille character in the file
 Consider building a component that would take in a plain-text letter and a position (maybe numbered 0-5) and would return either a 0 or ..
@@ -89,10 +96,8 @@ Try with one letter first.
     expected = file_writer.make_braille_grid_letter_by_letter
     assert_equal actual, expected
   end
-# eng_keys[letters.shift]
 
   def test_byte_count_changes_when_you_write_a_new_encoded_message
-    skip
     #message.txt contains "Hello world" as message
     file_writer = FileWriter.new
     actual = 0

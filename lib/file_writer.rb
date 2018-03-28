@@ -6,7 +6,8 @@ class FileWriter
               :line_1,
               :line_2,
               :line_3,
-              :counter
+              :counter,
+              :encoded_braille_message
 
   def initialize
     @translator = Translator.new
@@ -17,6 +18,7 @@ class FileWriter
     @line_2 = []
     @line_3 = []
     @counter = 0
+    @encoded_braille_message = ""
   end
 
 =begin
@@ -40,11 +42,8 @@ class FileWriter
         @line_3 << letter.shift
       end
     end
-    
-    # (@raw_braille_message.count).times do
-    #   letter = (@raw_braille_message.shift)
-    #   letter.join("\n").chomp
-    # end
+
+    @encoded_braille_message = (@line_1.join)+"\n"+(@line_2.join)+"\n"+(@line_3.join)
   end
 
   def write_encoded_message
