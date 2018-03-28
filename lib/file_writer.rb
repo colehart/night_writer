@@ -22,13 +22,16 @@ class FileWriter
   end
 =end
 
-  def make_braille_grid_by_single_letter
-    first_letter = (@raw_braille_message.shift)
-    first_letter.join("\n").chomp
+  def make_braille_grid_letter_by_letter
+    (@raw_braille_message.count).times do
+      binding.pry
+      letter = (@raw_braille_message.shift)
+      letter.join("\n").chomp
+    end
   end
 
   def write_encoded_message
-    @byte_count = File.write(@encoded_filename, make_braille_grid_by_single_letter)
+    @byte_count = File.write(@encoded_filename, make_braille_grid_letter_by_letter)
   end
 
 end
