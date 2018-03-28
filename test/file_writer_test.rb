@@ -56,7 +56,7 @@ Try with one letter first.
 # change message txt to have only lowercase a
     file_writer = FileWriter.new
     actual = "0.\n..\n.."
-    expected = file_writer.make_braille_grid
+    expected = file_writer.make_braille_grid_by_single_letter
     assert_equal actual, expected
   end
 

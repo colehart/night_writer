@@ -17,15 +17,14 @@ class FileWriter
     ((@reader.read_plaintext_message + "\n") * 3).chomp
   end
 =end
-  def make_braille_grid
+  def make_braille_grid_by_single_letter
     #  we want to make a new line "\n", * 3 and maybe(?) chomp or shift
-     first_letter = (@raw_braille_message.shift)
-     ((first_letter.first + "\n") * 3).chomp
-
+    first_letter = (@raw_braille_message.shift)
+    first_letter.join("\n").chomp
   end
 
   def write_encoded_message
-    @byte_count = File.write(@encoded_filename, make_braille_grid)
+    @byte_count = File.write(@encoded_filename, make_braille_grid_by_single_letter)
   end
 
 end
