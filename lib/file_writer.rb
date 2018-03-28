@@ -16,9 +16,13 @@ class FileWriter
     #we need to change this to pull from translator
     ((@reader.read_plaintext_message + "\n") * 3).chomp
   end
-=end
   def make_braille_grid_by_single_letter
-    #  we want to make a new line "\n", * 3 and maybe(?) chomp or shift
+    first_letter = (@raw_braille_message.shift)
+    first_letter.join("\n").chomp
+  end
+=end
+
+  def make_braille_grid_by_single_letter
     first_letter = (@raw_braille_message.shift)
     first_letter.join("\n").chomp
   end

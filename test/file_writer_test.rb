@@ -66,7 +66,7 @@ Try with one letter first.
   def test_it_can_split_two_lowercase_braille_letters_into_2x3_grid
 # change message txt to have only lowercase he
     file_writer = FileWriter.new
-    actual = "0.\n00\n..", "0.\n.0\n.."
+    actual = "0.0.\n00.0\n...."
     expected = file_writer.make_braille_grid_by_single_letter
     assert_equal actual, expected
   end

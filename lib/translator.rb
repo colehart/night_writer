@@ -14,13 +14,10 @@ class Translator
 
   def eng_to_braille
     letters = @reader.read_plaintext_message.chars
-
     (letters.count).times do |letter|
       @braille_message << eng_keys[letters.shift]
     end
-
     @braille_message
-
   end
 
 end
