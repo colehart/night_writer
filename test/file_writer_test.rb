@@ -77,6 +77,8 @@ Consider building a component that would take in a plain-text letter and a posit
 
 Smaller picture : we need to break each braille string to represent each letter "as it should be" 2x3 or 4x3 vertical grid.
 Try with one letter first.
+Then two letters.
+Two words with a space.
 =end
 
 =begin
@@ -87,12 +89,19 @@ Try with one letter first.
     expected = file_writer.make_braille_grid_by_single_letter
     assert_equal actual, expected
   end
-=end
 
   def test_it_can_split_two_lowercase_braille_letters_into_2x3_grid
 # change message txt to have only lowercase he
     file_writer = FileWriter.new
     actual = "0.0.\n00.0\n...."
+    expected = file_writer.make_braille_grid_letter_by_letter
+    assert_equal actual, expected
+  end
+=end
+  def test_it_can_split_two_words_braille_letters_into_2x3_grid
+  # change message txt to have only lowercase Hello world.
+    file_writer = FileWriter.new
+    actual = "..0.0.0.0.0.  .00.0.0.00\n..00.00.0..0  00.0000..0\n.0....0.0.0.  .00.0.0..."
     expected = file_writer.make_braille_grid_letter_by_letter
     assert_equal actual, expected
   end
