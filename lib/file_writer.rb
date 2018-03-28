@@ -37,11 +37,22 @@ class FileWriter
     if @raw_braille_message != nil
       @counter.times do
         letter = @raw_braille_message.shift
+
         @line_1 << letter.shift
+        when @line_1.length == 80
+        insert "\n"
+
         @line_2 << letter.shift
+        when @line_2.length == 80
+        insert "\n"
+        
         @line_3 << letter.shift
+        when @line_3.length == 80
+        insert "\n"
       end
     end
+
+    @line_1.length
 
     @encoded_braille_message = (@line_1.join)+"\n"+(@line_2.join)+"\n"+(@line_3.join)
   end
