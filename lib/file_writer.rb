@@ -9,6 +9,9 @@ class FileWriter
     @raw_braille_message = @translator.eng_to_braille
     @encoded_filename = ARGV[1]
     @byte_count = 0
+    @line_1 = []
+    @line_2 = []
+    @line_3 = []
   end
 
 =begin
@@ -23,6 +26,13 @@ class FileWriter
 =end
 
   def make_braille_grid_letter_by_letter
+    counter = @raw_braille_message.count
+    if @raw_braille_message
+      counter.times do |letter|
+      @line_1 << @raw_braille_message.shift
+      @line_2 << @raw_braille_message.shift
+      @line_3 << @raw_braille_message.shift
+    end
     (@raw_braille_message.count).times do
       binding.pry
       letter = (@raw_braille_message.shift)
