@@ -35,7 +35,7 @@ We are grabbing plaintext_message from file, not from ARGV
 =end
 
   def test_it_can_translate_from_filereader
-    skip #skipped when changing message.txt, from Hello world, content for other class tests
+     #skipped when changing message.txt, from Hello world, content for other class tests
     #passing message.txt in command line
     translator = Translator.new
     actual = [["..0.", "..00", ".0.."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."], ["  ", "  ", "  "], [".0", "00", ".0"], ["0.", ".0", "0."], ["0.", "00", "0."], ["0.", "0.", "0."], ["00", ".0", ".."]]
