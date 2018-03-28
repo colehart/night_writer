@@ -53,6 +53,7 @@ Smaller picture : we need to break each braille string to represent each letter 
 Try with one letter first.
 =end
 
+=begin
   def test_it_can_split_a_lowercase_braille_letter_into_2x3_grid
 # change message txt to have only lowercase a
     file_writer = FileWriter.new
@@ -60,13 +61,15 @@ Try with one letter first.
     expected = file_writer.make_braille_grid_by_single_letter
     assert_equal actual, expected
   end
+=end
 
-  def test_it_can_split_a_lowercase_braille_word_into_2x3_grid
-# change message txt to have only lowercase a
+  def test_it_can_split_two_lowercase_braille_letters_into_2x3_grid
+# change message txt to have only lowercase he
     file_writer = FileWriter.new
-    actual = "0.\n..\n.."
+    actual = "0.\n00\n..", "0.\n.0\n.."
     expected = file_writer.make_braille_grid_by_single_letter
     assert_equal actual, expected
   end
+# eng_keys[letters.shift]
 
 end
