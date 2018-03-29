@@ -18,14 +18,14 @@ class FileWriter
     if @encoded_filename == "braille.txt"
       @byte_count = File.write(@encoded_filename, @grid_builder.make_braille_grid_letter_by_letter)
     end
-    @byte_count
+    return @byte_count
   end
 
   def write_decoded_message
     if @decoded_filename == "english_end.txt"
       @byte_count = File.write(@decoded_filename, @translator.braille_to_eng)
     end
-    @byte_count
+    return @byte_count
   end
 
 end

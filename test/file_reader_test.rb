@@ -42,6 +42,7 @@ class FileReaderTest < Minitest::Test
       actual = file_reader.read_braille_message
       assert_equal expected, actual
     else
+      #internal test error message
       to_read_a_file_please_pass_either_message_dot_txt_or_braille_start_dot_txt
     end
   end

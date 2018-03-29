@@ -50,7 +50,7 @@ We are grabbing plaintext_message from file, not from ARGV
       #skipped when changing braille_start.txt content
       #passing braille_start.txt in command line as ARGV[0]
       translator = Translator.new
-      expected = ["Hello world"]
+      expected = "Hello world"
       actual = translator.braille_to_eng
       assert_equal expected, actual
     end

@@ -23,7 +23,7 @@ class Translator
       (letters.count).times do |letter|
         @braille_message << eng_keys[letters.shift]
       end
-      @braille_message
+      return @braille_message
     end
   end
 
@@ -36,7 +36,7 @@ class Translator
       (letters.count).times do |letter|
         @english_message << braille_keys[letters.shift]
       end
-      @english_message
+      return @english_message.join
     end
   end
 

@@ -33,6 +33,7 @@ class GridEraser
           (Array(line_3.slice!(0..1)))
           )
     end
+    return @decoded_braille_message
   end
 
   def concat_shift_block_into_next_array
@@ -44,5 +45,6 @@ class GridEraser
 
       @decoded_braille_message.delete_at(shift_block_index+1)
     end
+    return @decoded_braille_message
   end
 end
