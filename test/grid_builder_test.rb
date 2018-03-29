@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/grid_builder'
-require 'pry'
 
 class GridBuilderTest < Minitest::Test
 

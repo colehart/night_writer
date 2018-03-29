@@ -1,9 +1,9 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/grid_eraser'
-require 'pry'
 
 class GridEraserTest < Minitest::Test
+  
   def test_it_exists
     grid_eraser = GridEraser.new
     expected = GridEraser
@@ -57,8 +57,9 @@ class GridEraserTest < Minitest::Test
     assert_equal expected, actual
   end
 =begin
+  commented out because braille_start now contains more letters than H
   def test_it_can_populate_decoded_braille_message_array_with_single_letter
-    #starting off with Hello world in braille_start.txt
+    #starting off with H in braille_start.txt
     grid_eraser = GridEraser.new
     grid_eraser.split_into_lines
     expected = ["..", "..", ".0"]

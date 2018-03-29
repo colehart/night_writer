@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/translator'
-require 'pry'
 
 class TranslatorTest < MiniTest::Test
 
@@ -23,16 +22,6 @@ class TranslatorTest < MiniTest::Test
     actual = translator.braille_keys[["0.", "..", ".."]]
     assert_equal expected, actual
   end
-
-=begin
-We are grabbing plaintext_message from file, not from ARGV
-  def test_it_can_translate_an_english_word_to_braille
-    translator = Translator.new
-    actual = [["0.", "00", ".."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."]]
-    expected = translator.eng_to_braille("hello")
-    assert_equal actual, expected
-  end
-=end
 
   def test_it_can_translate_eng_to_braille_from_filereader
     if ARGV[0] == "message.txt"

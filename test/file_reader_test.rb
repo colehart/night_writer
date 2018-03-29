@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/file_reader'
-require 'pry'
 
 class FileReaderTest < Minitest::Test
 

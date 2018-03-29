@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/file_writer'
-require 'pry'
 
 class FileWriterTest < Minitest::Test
 =begin
