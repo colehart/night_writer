@@ -35,33 +35,15 @@ class GridEraser
     end
   end
 
-end
+  def concat_shift_block_into_next_array
+    shift_block_index = @decoded_braille_message.find_index(["..", "..", ".0"])
+    unless shift_block_index == nil
+      (@decoded_braille_message[shift_block_index][0] << @decoded_braille_message[shift_block_index+1][0])
+      (@decoded_braille_message[shift_block_index][1] << @decoded_braille_message[shift_block_index+1][1])
+      (@decoded_braille_message[shift_block_index][2] << @decoded_braille_message[shift_block_index+1][2])
 
-=begin
-class GridBuilder
-  def make_braille_grid_letter_by_letter
-    @counter = @raw_braille_message.count
-    if @raw_braille_message != nil
-      @counter.times do
-        letter = @raw_braille_message.shift
-
-        @line_1 << letter.shift
-        # when @line_1.length == 80
-        # insert "\n"
-
-        @line_2 << letter.shift
-        # when @line_2.length == 80
-        # insert "\n"
-
-        @line_3 << letter.shift
-        # when @line_3.length == 80
-        # insert "\n"
-      end
+      @decoded_braille_message.delete_at(shift_block_index+1)
     end
-
-    @line_1.length
-
-    @encoded_braille_message = (@line_1.join)+"\n"+(@line_2.join)+"\n"+(@line_3.join)
   end
+
 end
-=end

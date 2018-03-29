@@ -75,11 +75,13 @@ class GridEraserTest < Minitest::Test
     actual = grid_eraser.decoded_braille_message
     assert_equal expected, actual
   end
+
   def test_it_can_concatenate_shift_block_with_letter_after
-    skip
     #starting off with Hello world in braille_start.txt
     grid_eraser = GridEraser.new
+    grid_eraser.split_into_lines
     grid_eraser.populate_decoded_braille_message_array
+    grid_eraser.concat_shift_block_into_next_array
     expected = [["..0.", "..00", ".0.."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."], ["  ", "  ", "  "], [".0", "00", ".0"], ["0.", ".0", "0."], ["0.", "00", "0."], ["0.", "0.", "0."], ["00", ".0", ".."]]
     actual = grid_eraser.decoded_braille_message
     assert_equal expected, actual
