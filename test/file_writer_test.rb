@@ -52,4 +52,13 @@ class FileWriterTest < Minitest::Test
     refute_equal expected, actual
   end
 
+  def test_byte_count_changes_when_you_write_a_new_decoded_message
+    skip
+    #message.txt contains "Hello world" as message
+    file_writer = FileWriter.new
+    expected = 0
+    actual = file_writer.write_decoded_message
+    refute_equal expected, actual
+  end
+
 end

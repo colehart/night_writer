@@ -25,6 +25,7 @@ class FileWriter
     if @decoded_filename == "english_end.txt"
       @byte_count = File.write(@decoded_filename, @grid_eraser.make_english)
     end
+    @byte_count
   end
 
 end
