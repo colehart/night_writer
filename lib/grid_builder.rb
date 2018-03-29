@@ -46,9 +46,7 @@ class GridBuilder
         # insert "\n"
       end
     end
-
-    @line_1.length
-
+    #@line_1.length
     @encoded_braille_message = (@line_1.join)+"\n"+(@line_2.join)+"\n"+(@line_3.join)
   end
 end
