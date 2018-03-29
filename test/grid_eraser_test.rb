@@ -49,10 +49,29 @@ class GridEraserTest < Minitest::Test
   def test_it_can_split_into_array_of_lines
     #starting off with Hello world in braille_start.txt
     grid_eraser = GridEraser.new
-    grid_eraser.split_lines
+    grid_eraser.split_into_lines
     expected = ["..0.0.0.0.0.  .00.0.0.00",
                 "..00.00.0..0  00.0000..0",
                 ".0....0.0.0.  .00.0.0..."]
+    actual = grid_eraser.lines
+    assert_equal expected, actual
+  end
+
+  def test_it_can_populate_decoded_braille_message_array_with_single_letter
+    #starting off with Hello world in braille_start.txt
+    grid_eraser = GridEraser.new
+    grid_eraser.split_into_lines
+    expected = ["..", "..", ".0"]
+    actual = grid_eraser.populate_decoded_braille_message_array
+    assert_equal expected, actual
+  end
+
+  def test_it_populates_decoded_braille_message_array
+    skip
+    #starting off with Hello world in braille_start.txt
+    grid_eraser = GridEraser.new
+    grid_eraser.populate_decoded_braille_message_array
+    expected = [["..0.", "..00", ".0.."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."], ["  ", "  ", "  "], [".0", "00", ".0"], ["0.", ".0", "0."], ["0.", "00", "0."], ["0.", "0.", "0."], ["00", ".0", ".."]]
     actual = grid_eraser.lines
     assert_equal expected, actual
   end

@@ -15,22 +15,30 @@ class GridEraser
     @decoded_braille_message = []
   end
 
-  def split_lines
+  def split_into_lines
     @lines = @enc_braille_message.split("\n")
-    line_1 = lines[0]
-    line_2 = lines[1]
-    line_3 = lines[2]
+  end
+
+  def populate_decoded_braille_message_array
+    @counter = @lines[0].length
+
+    line_1 = @lines[0]
+    line_2 = @lines[1]
+    line_3 = @lines[2]
+
+    if @lines != nil
+      @decoded_braille_message =
+        (Array(line_1.slice(0..1))) +
+        (Array(line_2.slice(0..1))) +
+        (Array(line_3.slice(0..1)))
+        # @counter.times do
+      end
   end
 
 end
 
 =begin
 class GridBuilder
-    # def make_braille_grid_by_single_letter
-    #   first_letter = (@raw_braille_message.shift)
-    #   first_letter.join("\n").chomp
-    # end
-
   def make_braille_grid_letter_by_letter
     @counter = @raw_braille_message.count
     if @raw_braille_message != nil
