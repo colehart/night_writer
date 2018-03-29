@@ -1,4 +1,5 @@
 require './lib/file_reader'
+require './lib/grid_eraser'
 require './lib/english_keys.rb'
 require './lib/braille_keys.rb'
 

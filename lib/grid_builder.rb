@@ -51,8 +51,4 @@ class GridBuilder
 
     @encoded_braille_message = (@line_1.join)+"\n"+(@line_2.join)+"\n"+(@line_3.join)
   end
-
-  def make_english
-  end
-
 end

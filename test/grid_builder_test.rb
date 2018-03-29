@@ -54,7 +54,7 @@ class GridBuilderTest < Minitest::Test
   Try with one letter first.
   Then two letters.
   Two words with a space.
-  
+
     def test_it_can_split_a_lowercase_braille_letter_into_2x3_grid
   # change message txt to have only lowercase a
       grid_builder = GridBuilder.new
@@ -77,13 +77,5 @@ class GridBuilderTest < Minitest::Test
     actual = "..0.0.0.0.0.  .00.0.0.00\n..00.00.0..0  00.0000..0\n.0....0.0.0.  .00.0.0..."
     expected = grid_builder.make_braille_grid_letter_by_letter
     assert_equal actual, expected
-  end
-
-  def test_byte_count_changes_when_you_write_a_new_encoded_message
-    #message.txt contains "Hello world" as message
-    grid_builder = GridBuilder.new
-    actual = 0
-    expected = grid_builder.write_encoded_message
-    refute_equal actual, expected
   end
 end
