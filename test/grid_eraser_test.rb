@@ -66,7 +66,7 @@ class GridEraserTest < Minitest::Test
     assert_equal expected, actual
   end
 =end
-  def test_it_populates_decoded_braille_message_array
+  def test_it_can_populate_decoded_braille_message_array_with_spaces
     #starting off with Hello world in braille_start.txt
     grid_eraser = GridEraser.new
     grid_eraser.split_into_lines
