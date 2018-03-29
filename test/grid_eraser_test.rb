@@ -25,10 +25,10 @@ class GridEraserTest < Minitest::Test
     assert_equal expected, actual
   end
 
-  def test_line_starts_as_empty_array
+  def test_lines_starts_as_empty_array
     grid_eraser = GridEraser.new
     expected = []
-    actual = grid_eraser.line_1
+    actual = grid_eraser.lines
     assert_equal expected, actual
   end
 
@@ -46,12 +46,14 @@ class GridEraserTest < Minitest::Test
     assert_equal expected, actual
   end
 
-  def test_it_can_split_lines_into_arrays
+  def test_it_can_split_into_array_of_lines
     #starting off with Hello world in braille_start.txt
     grid_eraser = GridEraser.new
     grid_eraser.split_lines
-    expected = ["..0.0.0.0.0.  .00.0.0.00"]
-    actual = grid_eraser.line_1
+    expected = ["..0.0.0.0.0.  .00.0.0.00",
+                "..00.00.0..0  00.0000..0",
+                ".0....0.0.0.  .00.0.0..."]
+    actual = grid_eraser.lines
     assert_equal expected, actual
   end
 end

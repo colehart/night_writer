@@ -3,25 +3,24 @@ require './lib/file_reader'
 class GridEraser
   attr_reader :file_reader,
               :enc_braille_message,
-              :line_1,
-              :line_2,
-              :line_3,
+              :lines,
               :counter,
               :decoded_braille_message
 
   def initialize
     @file_reader = FileReader.new
     @enc_braille_message = @file_reader.read_braille_message
-    @line_1 = []
-    @line_2 = []
-    @line_3 = []
+    @lines = []
     @counter = 0
     @decoded_braille_message = []
-
   end
 
-  # def
-  # end
+  def split_lines
+    @lines = @enc_braille_message.split("\n")
+    line_1 = lines[0]
+    line_2 = lines[1]
+    line_3 = lines[2]
+  end
 
 end
 
