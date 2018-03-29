@@ -10,7 +10,7 @@ class FileWriter
     @grid_builder = GridBuilder.new
     @grid_eraser = GridEraser.new
     @encoded_filename = ARGV[1]
-    #@decoded_filename = ARGV[1]
+    @decoded_filename = ARGV[1]
     @byte_count = 0
   end
 

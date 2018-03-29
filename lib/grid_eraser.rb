@@ -21,18 +21,17 @@ class GridEraser
 
   def populate_decoded_braille_message_array
     @counter = @lines[0].length
-
     line_1 = @lines[0]
     line_2 = @lines[1]
     line_3 = @lines[2]
 
-    if @lines != nil
-      @decoded_braille_message =
-        (Array(line_1.slice(0..1))) +
-        (Array(line_2.slice(0..1))) +
-        (Array(line_3.slice(0..1)))
-        # @counter.times do
-      end
+    @counter.times do
+    @decoded_braille_message <<
+      ((Array(line_1.slice!(0..1))) +
+      (Array(line_2.slice!(0..1))) +
+      (Array(line_3.slice!(0..1))))
+    end
+
   end
 
 end
