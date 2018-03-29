@@ -25,12 +25,25 @@ class FileReaderTest < Minitest::Test
   end
 
   def test_it_reads_from_the_correct_file
-    #passing the two arguments message.txt ARGV[0] and braille.txt ARGV[1] in Terminal after test/file_reader_test.rb
-    #value changes depending on message in message.txt
-    file_reader = FileReader.new
-    expected = "Hello world"
-    actual = file_reader.read_plaintext_message
-    assert_equal expected, actual
+    if ARGV[0] == "message.txt"
+      #passing the two arguments message.txt ARGV[0] and braille.txt ARGV[1] in Terminal after test/file_reader_test.rb
+      #value changes depending on message in message.txt
+      file_reader = FileReader.new
+      expected = "Hello world"
+      actual = file_reader.read_plaintext_message
+      assert_equal expected, actual
+    elsif ARGV[0] == "braille_start.txt"
+      #passing the two arguments braille_start.txt ARGV[0] and english_end.txt ARGV[1] in Terminal after test/file_reader_test.rb
+      file_reader = FileReader.new
+#can't have alignment tabs for test
+      expected = "..0.0.0.0.0.  .00.0.0.00
+..00.00.0..0  00.0000..0
+.0....0.0.0.  .00.0.0..."
+      actual = file_reader.read_braille_message
+      assert_equal expected, actual
+    else
+      to_read_a_file_please_pass_either_message_dot_txt_or_braille_start_dot_txt
+    end
   end
 
 end

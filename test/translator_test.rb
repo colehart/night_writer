@@ -35,22 +35,25 @@ We are grabbing plaintext_message from file, not from ARGV
 =end
 
   def test_it_can_translate_eng_to_braille_from_filereader
-    #skipped when changing message.txt content for other class tests. Below is braille for Hello world
-    #passing message.txt in command line
-    translator = Translator.new
-    expected = [["..0.", "..00", ".0.."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."], ["  ", "  ", "  "], [".0", "00", ".0"], ["0.", ".0", "0."], ["0.", "00", "0."], ["0.", "0.", "0."], ["00", ".0", ".."]]
-    actual = translator.eng_to_braille
-    assert_equal actual, expected
+    if ARGV[0] == "message.txt"
+      #skipped when changing message.txt content for other class tests. Below is braille for Hello world
+      #passing message.txt in command line
+      translator = Translator.new
+      expected = [["..0.", "..00", ".0.."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."], ["  ", "  ", "  "], [".0", "00", ".0"], ["0.", ".0", "0."], ["0.", "00", "0."], ["0.", "0.", "0."], ["00", ".0", ".."]]
+      actual = translator.eng_to_braille
+      assert_equal actual, expected
+    end
   end
 
-  def test_it_can_translate_braille_to_eng_from_filereader
-    skip
-    #skipped when changing braille_start.txt content
-    #passing braille_start.txt in command line as ARGV[0]
-    translator = Translator.new
-    expected = ["h"]
-    actual = translator.braille_to_eng
-    assert_equal expected, actual
+  def test_it_can_translate_braille_to_eng_from_grid_eraser
+    if ARGV[0] == "braille_start.txt"
+      #skipped when changing braille_start.txt content
+      #passing braille_start.txt in command line as ARGV[0]
+      translator = Translator.new
+      expected = ["Hello world"]
+      actual = translator.braille_to_eng
+      assert_equal expected, actual
+    end
   end
 
 end

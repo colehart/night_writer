@@ -21,19 +21,22 @@ class FileWriterTest < Minitest::Test
 
   def test_it_encodes_into_the_correct_file
     # second argument passed in terminal has to be braille.txt
-    file_writer = FileWriter.new
-    expected = "braille.txt"
-    actual = file_writer.encoded_filename
-    assert_equal expected, actual
+    if ARGV[0] == "message.txt" #skips test depending on if testing encoding or decoding
+      file_writer = FileWriter.new
+      expected = "braille.txt"
+      actual = file_writer.encoded_filename
+      assert_equal expected, actual
+    end
   end
 
   def test_it_decodes_into_the_correct_file
-    skip
     # second argument passed in terminal has to be english_end.txt
-    file_writer = FileWriter.new
-    expected = "english_end.txt"
-    actual = file_writer.decoded_filename
-    assert_equal expected, actual
+    if ARGV[0] == "braille_start.txt" #skips test depending on if testing encoding or decoding
+      file_writer = FileWriter.new
+      expected = "english_end.txt"
+      actual = file_writer.decoded_filename
+      assert_equal expected, actual
+    end
   end
 
   def test_it_starts_byte_count_at_0
@@ -46,19 +49,22 @@ class FileWriterTest < Minitest::Test
 
   def test_byte_count_changes_when_you_write_a_new_encoded_message
     #message.txt contains "Hello world" as message
-    file_writer = FileWriter.new
-    expected = 0
-    actual = file_writer.write_encoded_message
-    refute_equal expected, actual
+    if ARGV[0] == "message.txt" #skips test depending on encoding or decoding
+      file_writer = FileWriter.new
+      expected = 0
+      actual = file_writer.write_encoded_message
+      refute_equal expected, actual
+    end
   end
 
   def test_byte_count_changes_when_you_write_a_new_decoded_message
-    skip
-    #message.txt contains "Hello world" as message
-    file_writer = FileWriter.new
-    expected = 0
-    actual = file_writer.write_decoded_message
-    refute_equal expected, actual
+    #braille_start.txt contains "Hello world" encoded in braille as message
+    if ARGV[0] == "braille_start.txt" #skips test depending on encoding or decoding
+      file_writer = FileWriter.new
+      expected = 0
+      actual = file_writer.write_decoded_message
+      refute_equal expected, actual
+    end
   end
 
 end

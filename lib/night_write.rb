@@ -26,6 +26,27 @@ end
 
 night_write = NightWrite.new
 
-  puts night_write.display_encoded_confirmation_message
+  if ARGV[0] == nil || ARGV[1] == nil
+    puts """
+    To encode to braille, please type:
+    'ruby <the_file_you_wish_to_run> message.txt braille.txt
 
-  puts night_write.display_decoded_confirmation_message
+    To decode to english, please type:
+    'ruby <the_file_you_wish_to_run> braille_start.txt english_end.txt'
+    """
+  elsif ARGV[0] == "message.txt" && ARGV[0] == "braille.txt"
+    puts night_write.display_encoded_confirmation_message
+
+  elsif ARGV[0] == "braille_start.txt" && ARGV[0] == "english_end.txt"
+    puts night_write.display_decoded_confirmation_message
+  else
+    puts """
+    Please input a valid entry.
+
+    To encode to braille, please type:
+    'ruby <the_file_you_wish_to_run> message.txt braille.txt
+
+    To decode to english, please type:
+    'ruby <the_file_you_wish_to_run> braille_start.txt english_end.txt'
+    """
+  end

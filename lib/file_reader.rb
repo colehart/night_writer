@@ -5,7 +5,9 @@ class FileReader
       plaintext_filename = ARGV[0]
       File.read(plaintext_filename).chomp
     else
+      unless ARGV[0] == "braille_start.txt"
       puts "To encode to braille, please type 'ruby <the_file_you_wish_to_run> message.txt braille.txt'"
+      end
     end
   end
 
@@ -14,7 +16,9 @@ class FileReader
       braille_filename = ARGV[0]
       File.read(braille_filename).chomp
     else
+      unless ARGV[0] == "message.txt"
       puts "To decode to english, please type 'ruby <the_file_you_wish_to_run> braille_start.txt english_end.txt'"
+      end
     end
   end
 end

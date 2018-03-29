@@ -45,5 +45,4 @@ class GridEraser
       @decoded_braille_message.delete_at(shift_block_index+1)
     end
   end
-
 end

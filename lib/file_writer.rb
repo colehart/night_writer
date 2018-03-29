@@ -1,5 +1,5 @@
 require './lib/grid_builder'
-require './lib/grid_eraser'
+require './lib/translator'
 
 class FileWriter
   attr_reader :encoded_filename,
@@ -8,7 +8,7 @@ class FileWriter
 
   def initialize
     @grid_builder = GridBuilder.new
-    @grid_eraser = GridEraser.new
+    @translator = Translator.new
     @encoded_filename = ARGV[1]
     @decoded_filename = ARGV[1]
     @byte_count = 0
@@ -23,7 +23,7 @@ class FileWriter
 
   def write_decoded_message
     if @decoded_filename == "english_end.txt"
-      @byte_count = File.write(@decoded_filename, @grid_eraser.make_english)
+      @byte_count = File.write(@decoded_filename, @translator.braille_to_eng)
     end
     @byte_count
   end

@@ -11,27 +11,33 @@ class Translator
 
   def initialize
     @reader= FileReader.new
+    @grid_eraser = GridEraser.new
     @braille_message = []
     @english_message = []
+    @decoded_message = []
   end
 
   def eng_to_braille
-    letters = @reader.read_plaintext_message.chars
-    (letters.count).times do |letter|
-      @braille_message << eng_keys[letters.shift]
+    if ARGV[0] == "message.txt"
+      letters = @reader.read_plaintext_message.chars
+      (letters.count).times do |letter|
+        @braille_message << eng_keys[letters.shift]
+      end
+      @braille_message
     end
-    @braille_message
   end
 
   def braille_to_eng
-    #need something to break it into keylike characters like .chars
-    letters = @reader.read_braille_message
-    (letters.count).times do |letter|
-      @english_message << braille_keys[letters.shift]
+    if ARGV[0] == "braille_start.txt"
+      letters = @grid_eraser.split_into_lines
+      letters = @grid_eraser.populate_decoded_braille_message_array
+      letters = @grid_eraser.concat_shift_block_into_next_array
 
-    #need to be able to capitalize next character when encounter shift block
+      (letters.count).times do |letter|
+        @english_message << braille_keys[letters.shift]
+      end
+      @english_message
     end
-    @english_message
   end
 
 end
