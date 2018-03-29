@@ -14,42 +14,42 @@ class FileWriterTest < Minitest::Test
 
   def test_it_exists
     file_writer = FileWriter.new
-    actual = FileWriter
-    expected = file_writer
-    assert_instance_of actual, expected
+    expected = FileWriter
+    actual = file_writer
+    assert_instance_of expected, actual
   end
 
   def test_it_encodes_into_the_correct_file
     # second argument passed in terminal has to be braille.txt
     file_writer = FileWriter.new
-    actual = "braille.txt"
-    expected = file_writer.encoded_filename
-    assert_equal actual, expected
+    expected = "braille.txt"
+    actual = file_writer.encoded_filename
+    assert_equal expected, actual
   end
 
   def test_it_decodes_into_the_correct_file
     skip
     # second argument passed in terminal has to be english_end.txt
     file_writer = FileWriter.new
-    actual = "english_end.txt"
-    expected = file_writer.decoded_filename
-    assert_equal actual, expected
+    expected = "english_end.txt"
+    actual = file_writer.decoded_filename
+    assert_equal expected, actual
   end
 
   def test_it_starts_byte_count_at_0
     #message.txt contains "Hello world" as message
     file_writer = FileWriter.new
-    actual = 0
-    expected = file_writer.byte_count
-    assert_equal actual, expected
+    expected = 0
+    actual = file_writer.byte_count
+    assert_equal expected, actual
   end
 
   def test_byte_count_changes_when_you_write_a_new_encoded_message
     #message.txt contains "Hello world" as message
     file_writer = FileWriter.new
-    actual = 0
-    expected = file_writer.write_encoded_message
-    refute_equal actual, expected
+    expected = 0
+    actual = file_writer.write_encoded_message
+    refute_equal expected, actual
   end
 
 end

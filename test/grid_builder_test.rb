@@ -7,44 +7,44 @@ class GridBuilderTest < Minitest::Test
 
   def test_it_exists
     grid_builder = GridBuilder.new
-    actual = GridBuilder
-    expected = grid_builder
-    assert_instance_of actual, expected
+    expected = GridBuilder
+    actual = grid_builder
+    assert_instance_of expected, actual
   end
 
   def test_line_1_starts_as_empty_array
     grid_builder = GridBuilder.new
-    actual = []
-    expected = grid_builder.line_1
-    assert_equal actual, expected
+    expected = []
+    actual = grid_builder.line_1
+    assert_equal expected, actual
   end
 
   def test_line_2_starts_as_empty_array
     grid_builder = GridBuilder.new
-    actual = []
-    expected = grid_builder.line_2
-    assert_equal actual, expected
+    expected = []
+    actual = grid_builder.line_2
+    assert_equal expected, actual
   end
 
   def test_line_3_starts_as_empty_array
     grid_builder = GridBuilder.new
-    actual = []
-    expected = grid_builder.line_3
-    assert_equal actual, expected
+    expected = []
+    actual = grid_builder.line_3
+    assert_equal expected, actual
   end
 
   def test_counter_starts_at_0
     grid_builder = GridBuilder.new
-    actual = 0
-    expected = grid_builder.counter
-    assert_equal actual, expected
+    expected = 0
+    actual = grid_builder.counter
+    assert_equal expected, actual
   end
 
   def test_encoded_braille_message_starts_empty
     grid_builder = GridBuilder.new
-    actual = ""
-    expected = grid_builder.encoded_braille_message
-    assert_equal actual, expected
+    expected = ""
+    actual = grid_builder.encoded_braille_message
+    assert_equal expected, actual
   end
 =begin
   Big picture : we need to output our braille character in the file
@@ -74,8 +74,8 @@ class GridBuilderTest < Minitest::Test
   def test_it_can_split_two_words_braille_letters_into_2x3_grid
     # change message txt to have only lowercase Hello world.
     grid_builder = GridBuilder.new
-    actual = "..0.0.0.0.0.  .00.0.0.00\n..00.00.0..0  00.0000..0\n.0....0.0.0.  .00.0.0..."
-    expected = grid_builder.make_braille_grid_letter_by_letter
-    assert_equal actual, expected
+    expected = "..0.0.0.0.0.  .00.0.0.00\n..00.00.0..0  00.0000..0\n.0....0.0.0.  .00.0.0..."
+    actual= grid_builder.make_braille_grid_letter_by_letter
+    assert_equal expected, actual
   end
 end

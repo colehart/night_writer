@@ -10,7 +10,7 @@ class FileWriter
     @grid_builder = GridBuilder.new
     @grid_eraser = GridEraser.new
     @encoded_filename = ARGV[1]
-    @decoded_filename = ARGV[1]
+    #@decoded_filename = ARGV[1]
     @byte_count = 0
   end
 
@@ -21,10 +21,10 @@ class FileWriter
     @byte_count
   end
 
-  # def write_decoded_message
-  #   if @decoded_filename == "english_end.txt"
-  #     @byte_count = File.write(@decoded_filename, @grid_eraser.make_english)
-  #   end
-  # end
+  def write_decoded_message
+    if @decoded_filename == "english_end.txt"
+      @byte_count = File.write(@decoded_filename, @grid_eraser.make_english)
+    end
+  end
 
 end

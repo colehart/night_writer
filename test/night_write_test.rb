@@ -6,16 +6,16 @@ require 'pry'
 class NightWriteTest < Minitest::Test
   def test_it_exists
     night_write = NightWrite.new
-    actual = NightWrite
-    expected = night_write
-    assert_instance_of actual, expected
+    expected = NightWrite
+    actual = night_write
+    assert_instance_of expected, actual
   end
 
   def test_it_instantiates_with_file_writer
     night_write = NightWrite.new
-    actual = FileWriter
-    expected = night_write.file_writer.class
-    assert_equal actual, expected
+    expected = FileWriter
+    actual = night_write.file_writer.class
+    assert_equal expected, actual
   end
 
 =begin
@@ -47,18 +47,18 @@ class NightWriteTest < Minitest::Test
   def test_it_displays_correct_encoded_confirmation_msg
     #skipped when message.txt changes and byte-count changes
     night_write = NightWrite.new
-    actual = "Created 'braille.txt' containing 74 characters."
-    expected = night_write.display_encoded_confirmation_message
-    assert_equal actual, expected
+    expected = "Created 'braille.txt' containing 74 characters."
+    actual = night_write.display_encoded_confirmation_message
+    assert_equal expected, actual
   end
 
   def test_it_displays_correct_decoded_confirmation_msg
     skip
     #skipped when braille_start.txt changes and byte-count changes
     night_write = NightWrite.new
-    actual = "Created 'english_end.txt' containing 11 characters."
-    expected = night_write.display_decoded_confirmation_message
-    assert_equal actual, expected
+    expected = "Created 'english_end.txt' containing 11 characters."
+    actual = night_write.display_decoded_confirmation_message
+    assert_equal expected, actual
   end
 
 end

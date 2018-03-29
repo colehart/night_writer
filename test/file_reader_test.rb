@@ -19,17 +19,18 @@ class FileReaderTest < Minitest::Test
 
   def test_it_exists
     file_reader = FileReader.new
-    actual = FileReader
-    expected = file_reader
-    assert_instance_of actual, expected
+    expected = FileReader
+    actual = file_reader
+    assert_instance_of expected, actual
   end
 
   def test_it_reads_from_the_correct_file
     #passing the two arguments message.txt ARGV[0] and braille.txt ARGV[1] in Terminal after test/file_reader_test.rb
+    #value changes depending on message in message.txt
     file_reader = FileReader.new
-    actual = "hello"
-    expected = file_reader.read_plaintext_message
-    assert_equal actual, expected
+    expected = "Hello world"
+    actual = file_reader.read_plaintext_message
+    assert_equal expected, actual
   end
 
 end

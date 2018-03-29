@@ -6,8 +6,8 @@ require 'pry'
 class GridEraserTest < Minitest::Test
   def test_it_exists
     grid_eraser = GridEraser.new
-    actual = GridEraser
-    expected = grid_eraser
-    assert_instance_of actual, expected
+    expected = GridEraser
+    actual = grid_eraser
+    assert_instance_of expected, actual
   end
 end
