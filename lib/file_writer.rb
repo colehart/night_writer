@@ -45,7 +45,7 @@ class FileWriter
         @line_2 << letter.shift
         when @line_2.length == 80
         insert "\n"
-        
+
         @line_3 << letter.shift
         when @line_3.length == 80
         insert "\n"
@@ -57,8 +57,15 @@ class FileWriter
     @encoded_braille_message = (@line_1.join)+"\n"+(@line_2.join)+"\n"+(@line_3.join)
   end
 
+  def make_english
+  end
+
   def write_encoded_message
     @byte_count = File.write(@encoded_filename, make_braille_grid_letter_by_letter)
+  end
+
+  def write_decoded_message
+    @byte_count = File.write(@encoded_filename, make_english)
   end
 
 end

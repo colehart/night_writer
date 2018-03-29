@@ -25,7 +25,7 @@ class FileReaderTest < Minitest::Test
   end
 
   def test_it_reads_from_the_correct_file
-    #passing the two arguments message.txt and braille.txt in Terminal after test/file_reader_test.rb
+    #passing the two arguments message.txt ARGV[0] and braille.txt ARGV[1] in Terminal after test/file_reader_test.rb
     file_reader = FileReader.new
     actual = "hello"
     expected = file_reader.read_plaintext_message

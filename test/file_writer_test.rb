@@ -4,8 +4,6 @@ require './lib/file_writer'
 require 'pry'
 
 class FileWriterTest < Minitest::Test
-  include EnglishKeys
-  include BrailleKeys
 =begin
   1. The Runner
   Write a Ruby program that can output a string like:
